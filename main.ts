@@ -11,8 +11,8 @@ function set_map (level: number) {
         tiles.setCurrentTilemap(tilemap`level3`)
     } else if (level == 3) {
         tiles.setCurrentTilemap(tilemap`level6`)
-    } else if (level == 4) {
-        tiles.setCurrentTilemap(tilemap`level7`)
+    } else {
+    	
     }
 }
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
@@ -49,7 +49,6 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, fu
     } else {
         game.gameOver(true)
     }
-    effects.confetti.startScreenEffect(200)
     tiles.placeOnTile(him, spawn)
 })
 let time_2 = 0
