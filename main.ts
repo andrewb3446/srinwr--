@@ -51,6 +51,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, fu
     }
     tiles.placeOnTile(him, spawn)
 })
+let time_2 = 0
+let time_1 = 0
 let spawn: tiles.Location = null
 let cuurent_level = 0
 let level_count = 0
@@ -206,3 +208,7 @@ set_map(cuurent_level)
 info.startCountdown(60)
 spawn = tiles.getTileLocation(5, 11)
 tiles.placeOnTile(him, spawn)
+let list = [time_1, time_2]
+for (let index = 0; index < 4; index++) {
+	
+}
