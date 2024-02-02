@@ -12,6 +12,8 @@ function set_map (level: number) {
         tiles.setCurrentTilemap(tilemap`level3`)
     } else if (level == 3) {
         tiles.setCurrentTilemap(tilemap`level6`)
+    } else if (level == 4) {
+        tiles.setCurrentTilemap(tilemap`level7`)
     }
 }
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
@@ -37,6 +39,12 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, lo
     scene.cameraShake(4, 500)
     tiles.placeOnTile(him, spawn)
     info.changeLifeBy(-1)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (jump < 2) {
+        jump += 1
+        him.vy = -150
+    }
 })
 function hasnextlevel () {
     return cuurent_level != level_count
